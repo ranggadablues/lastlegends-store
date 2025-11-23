@@ -40,8 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# store data
-/data
-
 # public folder
 /public

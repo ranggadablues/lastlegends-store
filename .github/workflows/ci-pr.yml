@@ -1,0 +1,26 @@
+name: PR CI
+
+on:
+  pull_request:
+    branches:
+      - master
+    types: [opened, synchronize, reopened]
+
+jobs:
+  pr-ci:
+    if: github.event.pull_request.head.ref == 'sandbox'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Build
+        run: npm run build
