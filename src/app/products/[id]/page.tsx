@@ -25,7 +25,7 @@ const ProductPage = async ({
 
     const { size, color } = await searchParams;
     const { id } = await params;
-    const product = getProduct(id);
+    const product = await getProduct(id);
     if (!product) {
         return <div>Product not found</div>;
     }
@@ -44,6 +44,7 @@ const ProductPage = async ({
                                 alt={product?.name}
                                 fill
                                 className="w-full h-full object-cover"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                             />
                             <div className="absolute top-4 left-4 bg-red-600 text-white px-4 py-2 text-xs uppercase tracking-wider">
                                 {product?.tag}

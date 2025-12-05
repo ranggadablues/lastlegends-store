@@ -30,7 +30,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
     return (
         <div key={product.id} className="group bg-zinc-800 border border-zinc-700 hover:border-red-600 transition-all duration-300">
             <div className="relative overflow-hidden aspect-square">
-                <Image src={product.images[product.colors[0]]} alt={product.name} fill className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <Image src={product.images[product.colors[0]]} alt={product.name} fill className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw" />
                 {product.tag && (
                     <div className="absolute top-3 right-3 bg-red-600 text-white px-3 py-1 text-xs tracking-wider">
                         {product.tag}
