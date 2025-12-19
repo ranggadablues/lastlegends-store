@@ -14,7 +14,7 @@ const Navbar = () => {
             {/* Logo */}
             <div className="flex-shrink-0">
               <Link href="/" className="flex items-center">
-                <Image src="/last-legends-logo.png" alt="LastLegends" width={200} height={200} />
+                <Image src="/last-legends-logo.png" alt="LastLegends" width={200} height={200} className="h-10 w-auto" />
               </Link>
             </div>
 

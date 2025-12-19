@@ -1,16 +1,19 @@
 "use client"
+
 import { ProductsType } from "@/types"
 import ProductCard from "./ProductCard"
 import { Button } from "./ui/button"
 import Categories from "./Categories"
 import { useRouter } from "next/navigation"
 import Filter from "./Filter"
-import { productsData } from "../../data/productsdata"
 
-// TEMPORARY
-const products: ProductsType = productsData
-const ProductList = ({ category, params }: { category: string, params: "homepage" | "products" }) => {
+const ProductList = ({ category, params, products }: { category: string, params: "homepage" | "products", products: ProductsType }) => {
     const router = useRouter();
+
+    if (!products || !Array.isArray(products)) {
+        return <div className="text-white">No products found.</div>;
+    }
+      
     return (
         <div className="bg-zinc-900 py-16">
             <div className="container mx-auto px-4">

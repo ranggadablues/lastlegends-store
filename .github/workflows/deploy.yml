@@ -38,7 +38,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: 22
           script: |
-            cd /srv/estore
+            cd /srv/lastlegends/store
             docker compose down
             docker compose pull
             docker compose up -d
