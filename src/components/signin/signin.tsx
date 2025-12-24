@@ -3,6 +3,7 @@
 import { Mail, Lock, Eye, EyeOff } from 'lucide-react';
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export function SignIn() {
     const [showPassword, setShowPassword] = useState(false);
@@ -22,9 +23,9 @@ export function SignIn() {
                 <div className="w-full max-w-md">
                     {/* Logo & Brand */}
                     <div className="flex flex-col items-center mb-10">
-                        <h1 className="text-3xl text-white uppercase tracking-widest mb-2">
-                            Last Legends
-                        </h1>
+                        <Link href="/" className="flex items-center">
+                            <Image src="/last-legends-logo.png" alt="LastLegends" width={500} height={500} className="h-20 w-auto mb-2" />
+                        </Link>
                         <div className="w-16 h-1 bg-red-600" />
                     </div>
 
@@ -70,7 +71,7 @@ export function SignIn() {
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                     placeholder="YOUR PASSWORD"
-                                    className="w-full bg-zinc-900 border border-zinc-700 pl-12 pr-12 py-3 text-gray-300 placeholder-gray-600 uppercase tracking-wide focus:outline-none focus:border-red-600 transition-colors"
+                                    className="w-full bg-zinc-900 border border-zinc-700 pl-12 pr-12 py-3 text-gray-300 placeholder-gray-600 tracking-wide focus:outline-none focus:border-red-600 transition-colors"
                                     required
                                 />
                                 <button
@@ -162,7 +163,7 @@ export function SignIn() {
             {/* Right Side - Image & Branding */}
             <div className="hidden lg:block lg:w-1/2 relative">
                 <Image
-                    src="/signin-background.jpeg"
+                    src="/signin-background.png"
                     alt="Rock Stage"
                     className="w-full h-full object-cover"
                     fill
@@ -172,7 +173,7 @@ export function SignIn() {
                 {/* Overlay Content */}
                 <div className="absolute inset-0 flex flex-col justify-center px-16">
                     <h2 className="text-5xl text-white uppercase tracking-wider mb-6">
-                        Join The<br />Legend
+                        Join The Legend
                     </h2>
                     <div className="w-20 h-1 bg-red-600 mb-6" />
                     <p className="text-gray-300 text-lg leading-relaxed max-w-md mb-8">
