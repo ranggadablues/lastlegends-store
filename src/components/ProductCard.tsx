@@ -16,7 +16,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
         size: product.sizes[0],
         color: product.colors[0],
     })
-    const {addToCart} = useCartStore();
+    const { addToCart } = useCartStore();
 
     const handleAddToCart = () => {
         addToCart({
@@ -37,7 +37,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
                     </div>
                 )}
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <Button onClick={handleAddToCart} className="bg-white text-black hover:bg-red-600 hover:text-white">
+                    <Button onClick={handleAddToCart} className="bg-white text-black hover:bg-red-600 hover:text-white cursor-pointer">
                         <ShoppingCart className="mr-2 h-4 w-4" />
                         Quick Add
                     </Button>
@@ -59,20 +59,21 @@ const ProductCard = ({ product }: { product: ProductType }) => {
                         variant="ghost"
                         size="sm"
                         className="text-gray-400 hover:text-red-600 hover:bg-transparent"
+                        onClick={handleAddToCart}
                     >
                         <ShoppingCart className="h-4 w-4" />
                     </Button>
                 </div>
 
                 {/* Detail Button */}
-                <Button 
-                  variant="outline"
-                  size="sm"
-                  className="w-full border border-zinc-700 bg-transparent text-gray-400 hover:bg-zinc-900 hover:text-white hover:border-red-600 uppercase tracking-wider text-xs py-2 mt-2 transition-all group/btn"
-                  onClick={() => router.push(`/products/${product.id}`)}
+                <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full border border-zinc-700 bg-transparent text-gray-400 hover:bg-zinc-900 hover:text-white hover:border-red-600 uppercase tracking-wider text-xs py-2 mt-2 transition-all group/btn"
+                    onClick={() => router.push(`/products/${product.id}`)}
                 >
-                  <Eye className="h-3 w-3 mr-1.5 group-hover/btn:text-red-600" />
-                  View Details
+                    <Eye className="h-3 w-3 mr-1.5 group-hover/btn:text-red-600 cursor-pointer" />
+                    View Details
                 </Button>
             </div>
         </div>
